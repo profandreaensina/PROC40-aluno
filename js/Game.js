@@ -60,22 +60,21 @@ class Game {
       { x: width / 2 - 180, y: height - 5500, image: obstacle2Image }
     ];
 
-    // Adicionar sprite de combustível no jogo
-    this.addSprites(fuels, 4, fuelImage, 0.02);
+    //01) Adicionar sprite de combustível no jogo
+    
 
-    // Adicionar sprite de moeda no jogo
-    this.addSprites(powerCoins, 18, powerCoinImage, 0.09);
+    //02) Adicionar sprite de moeda no jogo
+    
 
-    //Adicionar sprite de obstáculo no jogo
-    this.addSprites(obstacles, obstaclesPositions.length, obstacle1Image, 0.04, obstaclesPositions);
+    // 03) Adicionar sprite de obstáculo no jogo
+   
   }
 
   addSprites(spriteGroup, numberOfSprites, spriteImage, scale, positions = []) {
     for (var i = 0; i < numberOfSprites; i++) {
       var x, y;
 
-      //C41 //SA
-      if (positions.length > 0) {
+      if (/* 04) adiciona condição para quando x e y NÃO devem ser sorteados */) {
         x = positions[i].x;
         y = positions[i].y;
         spriteImage = positions[i].image;
