@@ -67,13 +67,7 @@ class Game {
     this.addSprites(powerCoins, 18, powerCoinImage, 0.09);
 
     //Adicionar sprite de obstáculo no jogo
-    this.addSprites(
-      obstacles,
-      obstaclesPositions.length,
-      obstacle1Image,
-      0.04,
-      obstaclesPositions
-    );
+    this.addSprites(obstacles, obstaclesPositions.length, obstacle1Image, 0.04, obstaclesPositions);
   }
 
   addSprites(spriteGroup, numberOfSprites, spriteImage, scale, positions = []) {
@@ -158,7 +152,6 @@ class Game {
         }
       }
 
-      //manipulando eventos de teclado
       this.handlePlayerControls();
 
       drawSprites();
@@ -237,11 +230,8 @@ class Game {
   }
 
   handleFuel(index) {
-    //adicionando combustível
     cars[index - 1].overlap(fuels, function(collector, collected) {
       player.fuel = 185;
-      //o sprite é coletado no grupo de colecionáveis que desencadeou
-      //o evento
       collected.remove();
     });
   }
@@ -250,8 +240,6 @@ class Game {
     cars[index - 1].overlap(powerCoins, function(collector, collected) {
       player.score += 21;
       player.update();
-      //o sprite é coletado no grupo de colecionáveis que desencadeou
-      //o evento
       collected.remove();
     });
   }
